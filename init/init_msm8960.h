@@ -39,12 +39,46 @@ extern "C" {
 // due to 'std::string property_get(const char* name)' in sdk24+
 int property_get_sdk23(const char *key, char *value);
 
+// Substitute property_set with property_override
+// For Android 8.0 this will call the property_override (source https://goo.gl/RbFvNT)
+// but for pre Android 8.0 it will just call the normal property_set
+int property_override(const char *name, const char *value);
+#define property_set property_override
+
 // Main function to read ro.build.fingerprint and ro.product.device
 // from /system/build.prop
 void set_props_from_build(void);
 
+// ERROR is deprecated in 8.0 in favor of c++ style: LOG(ERROR) << "text"...
+// add a helper to convert from (fmt, ...) to the new format
+#ifndef ERROR
+    void ERROR(const char *fmt, ...);
+#endif
+
 #ifdef __cplusplus
 }
+#endif
+
+
+// Rename vendor_load_properties() to real_vendor_load_properties()
+// and let init_htcCommon.cpp call the real function as appropriate
+#ifdef __cplusplus
+    // Allow usage of .c and/or .cpp (this is actually only needed in 6.0 where
+    // vendor_init is a c file, but allows for real_vendor_load_properties() to
+    // be in a .cpp file due to the #ifdef __cplusplus in vendor_init.h)
+    extern "C" { extern void real_vendor_load_properties(void); }
+#endif /* __cplusplus */
+#define vendor_load_properties real_vendor_load_properties
+
+
+// 8.0 no longer *needs* these defines but they are needed for backwards
+// compatibly and have little/no effect on 8.0+'s no length limitation
+#ifndef PROP_NAME_MAX
+#define PROP_NAME_MAX   32
+#endif
+
+#ifndef PROP_VALUE_MAX
+#define PROP_VALUE_MAX  92
 #endif
 
 #endif // _INIT_MSM_8960_H
