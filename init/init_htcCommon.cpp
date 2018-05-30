@@ -65,7 +65,7 @@ KitKat        4.4.4 API level 19
 #endif
 
 
-#include "init_msm8960.h"
+#include "init_htcCommon.h"
 
 
 #if PLATFORM_SDK_VERSION >= 24

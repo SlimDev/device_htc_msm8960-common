@@ -27,8 +27,8 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef _INIT_MSM_8960_H
-#define _INIT_MSM_8960_H
+#ifndef _INIT_HTC_COMMON_H
+#define _INIT_HTC_COMMON_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -81,4 +81,4 @@ void set_props_from_build(void);
 #define PROP_VALUE_MAX  92
 #endif
 
-#endif // _INIT_MSM_8960_H
+#endif // _INIT_HTC_COMMON_H
