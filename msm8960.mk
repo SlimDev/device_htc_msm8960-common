@@ -42,6 +42,23 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     tinymix
 
+# Audio HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl
+
+# Bluetooth HAL
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl
+
+# Camera HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl
+
+# Consumerir HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-impl
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
@@ -69,6 +86,10 @@ PRODUCT_PACKAGES += \
     libxml2 \
     libcnefeatureconfig
 
+# Keymaster HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8960 \
@@ -84,6 +105,10 @@ PRODUCT_COPY_FILES += \
 # Memtrack HIDL interfaces
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl
+
+# NFC HAL
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-impl
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -101,9 +126,23 @@ PRODUCT_PACKAGES += \
     power.msm8960 \
     android.hardware.power@1.0-impl
 
+# Sensors HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
+    sensors.msm8960
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl
+
+# USB HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
+
+# Vibrator HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
 
 # WiFi
 PRODUCT_PACKAGES += \
@@ -111,3 +150,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
     libwpa_client
+
+
+# WiFi HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service

@@ -75,6 +75,9 @@ TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 
+# HIDL
+DEVICE_MANIFEST_FILE := device/htc/msm8960-common/manifest.xml
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
