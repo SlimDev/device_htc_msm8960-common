@@ -25,7 +25,7 @@ LOCAL_SHARED_LIBRARIES := \
     librilutils \
     android.hardware.radio@1.0 \
     android.hardware.radio.deprecated@1.0 \
-    libhidlbase  \
+    libhidlbase \
     libhidltransport \
     libhwbinder
 
@@ -48,7 +48,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/../include
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/../include
 
 LOCAL_MODULE:= libril
-LOCAL_CLANG := false
+LOCAL_CLANG := true
 
 include $(BUILD_SHARED_LIBRARY)
 
